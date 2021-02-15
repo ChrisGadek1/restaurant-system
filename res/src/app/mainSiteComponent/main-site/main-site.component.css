@@ -1,0 +1,61 @@
+p{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#about-us{
+    padding: 10px;
+}
+
+#main-section{
+    -webkit-box-shadow: 6px 6px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 23px 0px rgba(0,0,0,0.75);
+    width: 86%;
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+}
+
+#food-img{
+    width: 100%;
+}
+
+#about-us-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+@media(min-width: 801px){
+    #img{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #text{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        padding: 15px;
+    }
+}
+
+@media(max-width: 800px){
+    #img{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #text{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding: 15px;
+    }
+
+}
+
+
+#about-us-title{
+    font-size: 24px;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+}

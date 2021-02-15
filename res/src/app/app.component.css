@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  #main-button{
+      font-size: 18px;
+  }
+
+  #user-menu > *{
+    font-size: 18px;
+    padding: 5px 15px 5px 15px
+  }
