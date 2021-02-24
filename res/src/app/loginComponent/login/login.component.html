@@ -1,0 +1,21 @@
+<section>
+    <form (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
+        <mat-form-field appearance="fill">
+            <mat-label>email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="loginError">niepoprawne dane logowania</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>hasło</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" >Zaloguj</button>
+        </mat-card-actions>
+    </form>
+    <p>Nie masz konta? Zarejestruj się</p>
+    <button mat-button id="register-button" routerLink="/register" routerLinkActive="active">tutaj</button>
+</section>

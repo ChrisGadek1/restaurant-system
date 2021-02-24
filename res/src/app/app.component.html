@@ -2,9 +2,16 @@
   <button mat-button color="primary" id="main-button" routerLink="/" routerLinkActive="active">Arkadix</button>
   <span class="example-spacer"></span>
   <div id="user-menu">
-    <button mat-flat-button color="primary" routerLink="/user" routerLinkActive="active"> Użytkownik </button>
+    <button *ngIf="authenticate(); else elseBlock" mat-flat-button [matMenuTriggerFor]="menu" color="primary">{{user.email}}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/user" routerLinkActive="active">Panel</button>
+      <button mat-menu-item (click)="logOut()">Wyloguj</button>
+    </mat-menu>
+    <ng-template #elseBlock><button mat-flat-button routerLink="/login" routerLinkActive="active" color="primary"> Login </button></ng-template>
     <button mat-button routerLink="/order" routerLinkActive="active"> Zamów </button>
-    <button mat-button routerLink="/basket" routerLinkActive="active"> Koszyk </button>
+    <button *ngIf="authenticate()" mat-button routerLink="/basket" routerLinkActive="active"> Koszyk
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

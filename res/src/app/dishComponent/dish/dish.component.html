@@ -1,0 +1,37 @@
+<section>
+    <div id="main-grid">
+        <div class="img-container">
+            <div class="inner-img-container">
+                <img  id="{{'dish-img'+dish.ID}}" class="dish-img" alt="brak zdjęcia">
+            </div>
+            
+        </div>
+        <div id="inner-grid1">
+            <div id="dish-title">
+                <p>{{dish.name}}</p>
+            </div>
+            <div id="grid-container1">
+                <div id="dish-desc">
+                    <p class="desc-button-label">opis</p>
+                    <button mat-mini-fab>
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                    <p #desc>{{dish.desc}}</p>
+                </div>
+                <div id="inner-grid2">
+                    <div id="dish-price">{{dish.price}} zł</div>
+                    <div *ngIf="serverUpdate.user != undefined && serverUpdate.user != null" id="grid-container2">
+                        <button (click)="addToBasket()" mat-icon-button color="primary">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                        <button (click)="removeFromBasket()" mat-icon-button color="primary">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    </div>
+                    <div *ngIf="serverUpdate.user != undefined && serverUpdate.user != null" id="number">{{getNumberOfDishes()}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -26,6 +26,24 @@ p{
     grid-template-columns: 60% 40%;
 }
 
+#address-text{
+    font-size: 24px;
+    padding: 10px;
+}
+
+#map-container{
+    height: 400px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+agm-map {
+    width: 100%;
+    height: 100%;
+}
+
 @media(min-width: 801px){
     #img{
         grid-column-start: 1;

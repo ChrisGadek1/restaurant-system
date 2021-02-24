@@ -1,1 +1,13 @@
-<p>user-site works!</p>
+<section>
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Historia zamówień">
+            <mat-form-field class="find-order" appearance="fill">
+                <mat-label>sortowanie</mat-label>
+                <mat-select>
+                    <mat-option value="data_rosnaco">data rosnąco</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-tab>
+        <mat-tab label="Moje konto"><app-user-data [user]="client"></app-user-data></mat-tab>
+      </mat-tab-group>
+</section>

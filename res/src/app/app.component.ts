@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'res';
+
+  user: firebase.default.User;
+  constructor(private auth: AngularFireAuth){
+    this.auth.user.subscribe((newUser) => {
+      this.user = newUser;
+    });
+  }
+
+  authenticate(){
+    return this.user;
+  }
+
+  logOut(){
+    this.auth.signOut().then(() => {
+
+    })
+  }
 }

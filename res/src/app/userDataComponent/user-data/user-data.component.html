@@ -1,0 +1,108 @@
+<section>
+    
+    <mat-divider></mat-divider>
+    <div>
+        <p>Dane podstawowe</p>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Imię</mat-label>
+                <input matInput [formControl]="nameFormControl" name="name">
+                <mat-error *ngIf="nameFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!nameFormControl.hasError('required') && nameFormControl.hasError('minlength')">imię musi mieć co najmniej 2 znaki</mat-error>
+                <mat-error *ngIf="!nameFormControl.hasError('required') && nameFormControl.hasError('maxlength')">imię może mieć co najwyżej 50 znaków</mat-error>
+                <button mat-icon-button matSuffix color="primary" (click)="updateUser('name',nameFormControl)">
+                    <p>edytuj</p>
+                </button> 
+            </mat-form-field>
+        </form>
+        
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Nazwisko</mat-label>
+                <input matInput name="surname" [formControl]="surnameFormControl">
+                <mat-error *ngIf="surnameFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!surnameFormControl.hasError('required') && surnameFormControl.hasError('minlength')">nazwisko musi mieć co najmniej 2 znaki</mat-error>
+                <mat-error *ngIf="!surnameFormControl.hasError('required') && surnameFormControl.hasError('maxlength')">nazwisko może mieć co najwyżej 50 znaków</mat-error>
+                <button mat-icon-button matSuffix color="primary" (click)="updateUser('surname',surnameFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+        <p>Adres</p>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>ulica</mat-label>
+                <input matInput name="street" [formControl]="streetFormControl">
+                <mat-error *ngIf="streetFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!streetFormControl.hasError('required') && streetFormControl.hasError('minlength')">ulica musi mieć co najmniej 2 znaki</mat-error>
+                <mat-error *ngIf="!streetFormControl.hasError('required') && streetFormControl.hasError('maxlength')">ulica może mieć co najwyżej 50 znaków</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('street',streetFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>numer</mat-label>
+                <input matInput name="number" [formControl]="numberFormControl">
+                <mat-error *ngIf="numberFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!numberFormControl.hasError('required') && numberFormControl.hasError('maxlength')">numer może mieć co najwyżej 10 znaków</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('number',numberFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>mieszkanie</mat-label>
+                <input matInput name="secondNumber" [formControl]="secondNumberFormControl">
+                <mat-error *ngIf="!secondNumberFormControl.hasError('required') && secondNumberFormControl.hasError('maxlength')">numer mieszkania może mieć co najwyżej 10 znaków</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('secondNumber',secondNumberFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>kod pocztowy</mat-label>
+                <input matInput name="postcode" [formControl]="postCodeFormControl" placeholder="__-___">
+                <mat-error *ngIf="postCodeFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!postCodeFormControl.hasError('required') && postCodeFormControl.hasError('pattern')">kod pocztowy musi być postaci ddd-ddd, d-cyfra</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('postcode',postCodeFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+        <p>pozostałe dane</p>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>numer telefonu</mat-label>
+                <input matInput name="phoneNumber" [formControl]="phoneNumberFormControl">
+                <mat-error *ngIf="phoneNumberFormControl.hasError('required')">pole nie może być puste</mat-error>
+                <mat-error *ngIf="!phoneNumberFormControl.hasError('required') && phoneNumberFormControl.hasError('pattern')">numer telefonu musi składać się z 9 cyfr</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('phoneNumber',phoneNumberFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>numer karty kredytowej</mat-label>
+                <input matInput name="cardNumber" [formControl]="cardNumberFormControl" placeholder="____-____-____-____">
+                <mat-error *ngIf="!cardNumberFormControl.hasError('required') && cardNumberFormControl.hasError('pattern')">numer karty musi być postaci dddd-dddd-dddd-dddd, d-cyfra</mat-error>
+                <button mat-icon-button matSuffix  color="primary" (click)="updateUser('cardNumber',cardNumberFormControl)">
+                    <p>edytuj</p>
+                </button>
+            </mat-form-field>
+        </form>
+        
+    </div>
+</section>

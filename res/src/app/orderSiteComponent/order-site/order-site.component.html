@@ -1,1 +1,24 @@
-<p>order-site works!</p>
+<section id="user-section">
+    <nav>
+        <mat-form-field class="order-form1" appearance="fill">
+            <mat-label>wybierz rodzaj dania</mat-label>
+            <mat-select>
+                <mat-option value="asd">asd</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="order-form1" appearance="fill">
+            <mat-label>sortuj według</mat-label>
+            <mat-select>
+                <mat-option value="alfabetycznie_rosnaco">alfabetycznie rosnąco</mat-option>
+                <mat-option value="alfabetycznie_malejaco">alfabetycznie malejąco</mat-option>
+                <mat-option value="ceny_rosnaco">ceny rosnąco</mat-option>
+                <mat-option value="ceny_malejaco">ceny malejąco</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </nav>
+    <mat-divider></mat-divider>
+    <ng-container *ngFor="let dish of dishes">
+        <app-dish [dish]="dish"></app-dish>
+    </ng-container>
+    
+</section>

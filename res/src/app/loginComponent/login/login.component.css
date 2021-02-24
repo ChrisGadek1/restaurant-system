@@ -1,0 +1,28 @@
+section{
+    width: fit-content;
+    padding: 15p;
+    border-radius: 1px solid black;
+    margin: auto;
+    margin-top: 12%;
+    -webkit-box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+form > *{
+    display: block;
+    margin: 5px;
+}
+p{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    display: inline;
+}
+
+#register-button{
+    display: inline;
+    padding: 0;
+}

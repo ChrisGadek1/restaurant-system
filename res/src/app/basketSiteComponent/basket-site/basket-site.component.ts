@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Basket } from 'src/app/objects/Basket/basket';
+import { ServerDataService } from 'src/app/services/server-data.service';
 
 @Component({
   selector: 'app-basket-site',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketSiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public serverData: ServerDataService) {
+    
+  }
 
   ngOnInit(): void {
   }

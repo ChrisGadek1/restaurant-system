@@ -18,6 +18,21 @@
                 </div>
             </div>
         </mat-tab>
-        <mat-tab label="Jak nas znaleźć?">Content 2</mat-tab>
+        <mat-tab label="Jak nas znaleźć?">
+            <div id="find-us">
+                <p id="address-text">Nasza restauracja mieści się pod adresem: [adres z bazy danych]</p>
+                <div id="map-container">
+                    <agm-map
+                    [latitude]="lat"
+                    [longitude]="lng"
+                    [zoom]="14"
+                    >
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+
+             
+            </div>
+        </mat-tab>
     </mat-tab-group>
 </section>

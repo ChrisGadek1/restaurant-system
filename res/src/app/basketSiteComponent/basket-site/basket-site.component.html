@@ -1,1 +1,6 @@
-<p>basket-site works!</p>
+<section>
+    <ng-container *ngFor="let basket of serverData.basket != undefined ? serverData.basket.dishes : []">
+        <app-basket-element></app-basket-element>
+    </ng-container>
+    
+</section>
